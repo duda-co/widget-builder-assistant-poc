@@ -1,0 +1,17 @@
+pydantic>=2.6.1
+openai>=1.12.0
+rich>=13.7.0
+pydantic-ai
+logfire
+pyperclip
+
+# For CLI interface
+typer>=0.9.0
+
+# OpenAI Agents SDK
+openai-agents>=0.0.11
+
+# For testing
+requests
+pytest
+pytest-httpserver 
