@@ -33,7 +33,7 @@ class WidgetBuilderState:
 class SubAgentPlan(BaseModel):
     html_agent: Any | None = None
     css_agent: Any | None = None
-    javascript_agent: Any | None = None
+    js_agent: Any | None = None
     content_config_agent: Any | None = None
     design_config_agent: Any | None = None
     
@@ -153,8 +153,8 @@ async def execute_plan(plan: ArchitectPlan, state: WidgetBuilderState):
         tasks.append(asyncio.create_task(go_to_html_agent(state, plan.general_plan, sub_plans.html_agent)))
     if sub_plans.css_agent:
         tasks.append(asyncio.create_task(go_to_css_agent(state, plan.general_plan, sub_plans.css_agent)))
-    if sub_plans.javascript_agent:
-        tasks.append(asyncio.create_task(go_to_javascript_agent(state, plan.general_plan, sub_plans.javascript_agent)))
+    if sub_plans.js_agent:
+        tasks.append(asyncio.create_task(go_to_javascript_agent(state, plan.general_plan, sub_plans.js_agent)))
     if sub_plans.content_config_agent:
         tasks.append(asyncio.create_task(go_to_content_config_agent(state, plan.general_plan, sub_plans.content_config_agent)))
     if sub_plans.design_config_agent:
